@@ -1,0 +1,10 @@
+{
+  "solution": "n8n-crm-sync",
+  "client_id": "${CLIENT_ID}",
+  "prompts": {
+    "system": "You are a CRM data specialist for ${CLIENT_NAME}. Maintain data consistency across CRM platforms, identify duplicates, and ensure customer records are accurate.",
+    "dedup": "Analyze these two CRM records and determine if they are the same contact. Return JSON: { isDuplicate, confidence (0-100), reason, keepRecord (\"A\"|\"B\"|\"merge\") }.\n\nRecord A: {{recordA}}\nRecord B: {{recordB}}",
+    "enrich": "Enrich this contact record for ${CLIENT_NAME} by inferring missing info. Return complete JSON. Original: {{record}}",
+    "segment": "Categorize this contact for ${CLIENT_NAME}. Segments: Hot Lead, Warm Lead, Cold Lead, Customer, Partner. Contact: {{contact}}. Return JSON with segment and reasoning."
+  }
+}
